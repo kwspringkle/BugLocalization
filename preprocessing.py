@@ -11,11 +11,9 @@ from nltk.stem.porter import PorterStemmer
 import os
 from assets import java_keywords, stop_words
 import csv
-# from util import *
 from collections import OrderedDict
 from pygments.lexers import JavaLexer
 from pygments.token import Token
-#from projectDatasets import DATASET
 from datetime import datetime
 
 class BugReport:
@@ -152,7 +150,7 @@ class Parser:
             else:
                 package_name = None
 
-            if self.name == 'aspectj' or 'tomcat' or 'eclipse' or 'swt':
+            if self.name == 'aspectj' or 'tomcat' or 'eclipse' or 'swt' or 'birt':
                 src_files[os.path.relpath(src_file, start=self.src)] = SourceFile(src, comments, class_names,
                                                                                   attributes, method_names, variables, [
                                                                                       os.path.basename(src_file).split(
